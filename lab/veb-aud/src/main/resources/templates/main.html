@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main page</title>
+</head>
+<body>
+<div xmlns:th="http://www.thymeleaf.org">
+
+    <p>
+        this is the main page
+        this will show only after login
+    </p>
+
+    <div th:if="${user.getUserRole().name().equals('GOD')}">
+        <p>vie ste korisnik so uloga na GOD</p>
+        <a href="/main/makeAnAdmin">Make someone an admin</a>
+    </div>
+
+    <div th:if="${user.getUserRole().name().equals('ADMIN')}">
+        <p>vie ste korisnik so uloga na ADMIN</p>
+        <h2>all ussers</h2>
+        <p th:each="user:${users}" th:text="${user.getName()} + ' '+ ${user.getUserRole()}"></p>
+        <ul th:each="user: ${users}">
+            <li th:text="${user.getName()} + ' '+ ${user.getUserRole()}"></li>
+        </ul>
+    </div>
+
+    <div th:if="${user.getUserRole().name().equals('USER')}">
+        <p>vie ste korisnik so uloga na USER</p>
+        <p>if you what to see al users and there roles you need to be an Admin (log as admin)</p>
+        <p> only Mahmud can make someone and Admin he is god</p>
+    </div>
+
+</div>
+</body>
+</html>

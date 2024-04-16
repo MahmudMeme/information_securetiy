@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Created-By: IntelliJ IDEA
+Built-By: memed
+Build-Jdk: 21.0.1
+Implementation-Title: veb-aud
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.mk.ukim.finki
+Main-Class: ${start-class}
+

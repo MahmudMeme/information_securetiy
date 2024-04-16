@@ -1,0 +1,10 @@
+<div xmlns:th="http://www.thymeleaf.org">
+    <form method="POST" action="/main/addAdmin">
+        <select name="userId" id="userId">
+            <option th:each="user:${users}" th:value="${user.getId()}" th:text="${user.getName()}">
+            </option>
+        </select>
+        <input type="submit">
+    </form>
+
+</div>
